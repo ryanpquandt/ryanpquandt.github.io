@@ -60,12 +60,24 @@ rewrites the file and drops the stylesheet.
 
 ## Publishing
 
-Any static host works. Two easy options:
+The site is hosted on GitHub Pages from the repository
+`github.com/ryanpquandt/ryanpquandt.github.io` (branch `main`, root folder). The `CNAME`
+file tells GitHub the custom domain is `quandtify.com`; DNS for the domain is managed at
+Cloudflare (four A records to GitHub Pages plus a `www` CNAME to `ryanpquandt.github.io`).
 
-- **Netlify / Cloudflare Pages** — drag the `website` folder onto the dashboard,
-  then point the `quandtify.com` DNS at it.
-- **GitHub Pages** — `git init`, push the folder contents to a repo, enable Pages on
-  the `main` branch, add `quandtify.com` as the custom domain.
+To publish a change, commit and push:
+
+```sh
+git add -A
+git commit -m "Describe the change"
+git push
+```
+
+GitHub rebuilds the site within a minute or two. Note: this folder lives in Dropbox, and
+`git add` occasionally fails with "short read while indexing"; just run it again.
+
+`.gitignore` keeps `.DS_Store`, Dropbox metadata, and the unused original headshot out of
+the repository.
 
 ## Retheming
 
