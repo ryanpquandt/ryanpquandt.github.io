@@ -248,6 +248,8 @@ p { margin: 0 0 16px; }
 
 /* ---------- research: sub-nav + area cards ---------- */
 
+h1 + .sub-nav { margin-top: 22px; }
+
 .sub-nav {
   display: flex;
   flex-wrap: wrap;
