@@ -87,6 +87,16 @@ a:hover {
   font-size: 0.94rem;
 }
 
+/* The home page drops the site title. Keep its nav on the right, and hold the header at the
+   height the title gives it elsewhere so the nav doesn't shift between pages. */
+.site-nav:only-child { margin-left: auto; }
+
+.header-inner:has(> .site-nav:only-child)::before {
+  content: "\200b";
+  font-family: var(--serif);
+  font-size: 1.3rem;
+}
+
 .site-nav a {
   color: var(--muted);
   padding-bottom: 2px;
@@ -135,6 +145,9 @@ p { margin: 0 0 16px; }
   font-size: 1.05rem;
   margin-bottom: 28px;
 }
+
+/* Pages without a lede go straight from the title into body text. */
+h1 + p:not(.lede) { margin-top: 24px; }
 
 /* ---------- home ---------- */
 
@@ -276,8 +289,7 @@ h1 + .sub-nav { margin-top: 22px; }
 .sub-nav + section h2,
 .sub-nav + h2 { margin-top: 36px; }
 
-#summary { margin: 28px 0 40px; }
-#summary p { max-width: 68ch; }
+h1 + .areas { margin-top: 28px; }
 
 .areas {
   display: grid;
