@@ -6,9 +6,9 @@ three-line fallback for the missing headshot.
 ```
 website/
 ├── index.html                Home — bio, portrait, contact
-├── research.html             Research overview — one summary paragraph + three area cards
+├── research.html             Research overview — three area cards
 ├── research-economics.html   Economics — publications
-├── research-ai.html          AI — publications
+├── research-ai.html          Human-AI Teaming — publications
 ├── research-philosophy.html  Philosophy — publications
 ├── teaching.html             Teaching philosophy (+ commented-out courses section)
 ├── cv.html                   Positions, education, fields, links to CV PDF
@@ -34,14 +34,14 @@ Cmd-Shift-R.) No build step. Stop the server with Ctrl-C.
 
 | What                         | File                       | Look for                  |
 |------------------------------|----------------------------|---------------------------|
-| Summary paragraph            | `research.html`            | `<section id="summary">`  |
 | Area cards (one-line blurbs) | `research.html`            | `<div class="areas">`     |
 | Page ledes (grey subtitle)   | each research page         | `<p class="lede">`        |
 
 Each area page is a lede plus publication lists in `<ul class="pubs">` format. To move a paper
 between areas, cut its `<li>` and paste it into the other file. The sub-navigation
-(Overview / Economics / AI / Philosophy) is repeated at the top of all four research pages; if
-you rename an area, update it in all four.
+(Overview / Economics / Human-AI Teaming / Philosophy) is repeated at the top of the three area
+pages; the overview shows the area cards instead. If you rename an area, update it in all four
+files.
 
 Edit HTML in VS Code (`open -a "Visual Studio Code" .`) or in TextEdit with Settings → Open and
 Save → "Display HTML files as HTML code" turned on. Saving from TextEdit's formatted view
